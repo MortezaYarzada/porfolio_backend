@@ -32,7 +32,7 @@ router.delete('/:id', async (req, res) => {
     if (message == null) {
       return res.status(404).json({ message: 'Cannot find message' });
     }
-    await message.remove();
+    await message.deleteOne();
     res.json({ message: 'Deleted Message' });
   } catch (err) {
     res.status(500).json({ message: err.message });

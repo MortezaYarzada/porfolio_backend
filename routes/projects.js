@@ -70,7 +70,7 @@ router.patch('/:id', getProject, async (req, res) => {
 
 router.delete('/:id', getProject, async (req, res) => {
   try {
-    await res.project.remove();
+    await res.project.deleteOne();
     res.json({ message: 'Deleted Project' });
   } catch (err) {
     res.status(500).json({ message: err.message });
